@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Phone Zone</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9fafb;
+  }
+
+  /* Navbar */
+  header {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover {
+    color: #007BFF;
+  }
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  @media(max-width:768px){
+    .hamburger { display:block; }
+    .nav-links { display:none; flex-direction: column; gap:15px; }
+    .nav-links.show { display:flex; }
+  }
+
+  /* Contact Section */
+  .contact {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+  .contact h2 {
+    font-size: 2.8rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+  }
+  .contact p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  .card {
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    flex: 1 1 250px;
+    max-width: 300px;
+    transition: transform 0.3s;
+  }
+  .card:hover { transform: translateY(-5px); }
+  .card i {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+  .card p { font-weight: 600; }
+
+  /* Contact Form */
+  .contact-form {
+    background: #007bff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.05);
+    animation: fadeIn 1.5s ease;
+  }
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  .contact-form button {
+    background: #ff0000;
+    color: #fefefe;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .contact-form button:hover { background: #0056b3; }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .social-icons a {
+    color: #ff6600;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: 0.3s;
+  }
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #007BFF;
+  }
+
+  @keyframes fadeIn {
+    from { opacity:0; transform: translateY(20px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo" height="50">
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#phones" class="btn">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="menu-toggle"><i class="fas fa-bars"></i></div>
+  </nav>
+</header>
+
+<!-- Contact Section -->
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or need assistance, feel free to reach out!</p>
+
+  <div class="contact-cards">
+    <div class="card"><i class="fas fa-phone"></i><p>+20 120 566 2464</p></div>
+    <div class="card"><i class="fas fa-envelope"></i><p>info@phonezone.com</p></div>
+    <div class="card"><i class="fas fa-map-marker-alt"></i><p>Sekeena El Gadida, Alexandria</p></div>
+  </div>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <h2>Phone Zone</h2>
+  <p>Designed & Developed by Osama El Bahr</p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p class="copyright">© 2025 Phone Zone. All rights reserved.</p>
+</footer>
+
+<!-- Hamburger Script -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+  });
+</script>
+
+</body>
+</html>

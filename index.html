@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Navbar */
+      header {
+        background: #fff; 
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        position: relative;
+      }
+      .navbar .logo img {
+        height: 50px;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+      .nav-links li {
+        display: inline-block;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0%;
+        height: 2px;
+        background: #007BFF;
+        transition: 0.3s;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+      .nav-links a:hover {
+        color: #007BFF;
+      }
+      /* Hamburger */
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: #fff;
+          flex-direction: column;
+          width: 200px;
+          display: none;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .nav-links.show {
+          display: flex;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+
+      <!-- اللينكات -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#phones">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- زر الهامبورجر -->
+      <div class="hamburger" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>The Best Phones at Your Fingertips</h1>
+    <p>Curated selection – Great prices – Choices to suit every need</p>
+    <a href="#phones" class="btn">Shop Now</a>
+  </div>
+  <div class="hero-img">
+    <img src="images/hero-phone.jpg" alt="Smartphone">
+  </div>
+</section>
+
+<style>
+.hero {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 60px 20px;
+  gap: 30px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  flex-direction: column-reverse;
+}
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+.hero-text .btn {
+  background: #007BFF; 
+  color: #fff; 
+  padding: 12px 30px; 
+  border-radius: 10px; 
+  font-weight: bold; 
+  text-decoration: none;
+  transition: 0.3s;
+}
+.hero-text .btn:hover {
+  background: #0056b3;
+}
+.hero-img img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 60px rgba(0,0,0,0.3);
+}
+</style>
+
+
+<!-- تأثير Hover للزرار -->
+<style>
+  .hero-text .btn:hover {
+    background: #0056b3;
+  }
+</style>
+
+  <!-- Phones Section -->
+  <section class="phones" id="phones">
+    <h2>Our Phones</h2>
+    <div class="phone-grid">
+      <div class="phone-card">
+        <img src="images/phone1.jpg" alt="Phone 1">
+        <h3>iPhone 14 Pro</h3>
+        <p>$999</p>
+        <button onclick="showDetails('iPhone 14 Pro')">Details</button>
+      </div>
+      <div class="phone-card">
+        <img src="images/phone2.jpg" alt="Phone 2">
+        <h3>Samsung Galaxy S23</h3>
+        <p>$899</p>
+        <button onclick="showDetails('Samsung Galaxy S23')">Details</button>
+      </div>
+      <div class="phone-card">
+        <img src="images/phone3.jpg" alt="Phone 3">
+        <h3>OnePlus 11</h3>
+        <p>$699</p>
+        <button onclick="showDetails('OnePlus 11')">Details</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+        <h2>Phone Zone</h2>
+        <p>Designed & Developed by Osama El Bahr</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/osama.g.elbahr" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/osama_elbahr22" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/osama-elbahr-514a6b264/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/201205662464" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">© 2025 Phone Zone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <script>
+    // تفعيل الهامبورجر
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Phone Zone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* About Section Styling */
+        .about {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .about.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Highlight Button */
+        .about .btn {
+            background: #007BFF;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .about .btn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about .btn:hover {
+            background: #0056b3;
+        }
+
+        /* Team / Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .features.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card {
+            background: #f5f5f5;
+            border-radius: 15px;
+            padding: 25px 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 40px;
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#phones" class="btn">Products</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Phone Zone</h2>
+        <p>Welcome to Phone Zone, your one-stop destination for the latest smartphones and accessories. We aim to provide you with the best products at competitive prices.</p>
+        <p>Our team is passionate about technology and committed to delivering exceptional customer service. Thank you for choosing Phone Zone!</p>
+        <a href="index.html#phones" class="btn">Explore Products</a>
+    </section>
+
+    <!-- Features / Team Section -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Fast Delivery</h3>
+            <p>Get your orders delivered quickly and safely to your doorstep.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Our team is always ready to help you with any questions.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-gem"></i>
+            <h3>Best Quality</h3>
+            <p>We offer premium smartphones and accessories with guaranteed quality.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2>Phone Zone</h2>
+        <p>Designed & Developed by Osama El Bahr</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/osama.g.elbahr" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/osama_elbahr22" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/osama-elbahr-514a6b264/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/201205662464" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="copyright">© 2025 Phone Zone. All rights reserved.</p>
+    </footer>
+
+    <!-- Hamburger Script -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+
+        // Animation on scroll
+        function revealOnScroll() {
+            const aboutSection = document.querySelector('.about');
+            const featuresSection = document.querySelector('.features');
+            const btn = document.querySelector('.about .btn');
+            const windowHeight = window.innerHeight;
+            const aboutTop = aboutSection.getBoundingClientRect().top;
+            const featuresTop = featuresSection.getBoundingClientRect().top;
+
+            if (aboutTop < windowHeight - 100) {
+                aboutSection.classList.add('visible');
+                btn.classList.add('visible');
+            }
+
+            if (featuresTop < windowHeight - 100) {
+                featuresSection.classList.add('visible');
+            }
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
